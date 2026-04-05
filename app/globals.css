@@ -127,3 +127,7 @@
     @apply font-sans;
     }
 }
+
+.pixelated {
+  image-rendering: pixelated;
+}
