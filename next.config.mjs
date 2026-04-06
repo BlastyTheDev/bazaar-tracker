@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       new URL(
-        "https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/refs/heads/master/data/1.21.8/items/**"
+        "https://raw.githubusercontent.com/BlastyTheDev/minecraft-assets/refs/heads/main/1.21.8_blocks_items/**"
       ),
     ],
   },

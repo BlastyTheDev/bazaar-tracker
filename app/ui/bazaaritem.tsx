@@ -5,33 +5,42 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@/components/ui/item"
-import Image from "next/image"
 import Link from "next/link"
+import dynamic from "next/dynamic"
+
+const ClientImage = dynamic(() => import("@/app/ui/clientimage"), {
+  ssr: false,
+})
 
 export default function BazaarItem({
-  itemId,
+  details,
+  enchantedBook,
   sellPrice,
 }: {
-  itemId: string
+  details: string[]
+  enchantedBook: boolean
   sellPrice: number
 }) {
+  const name = details[0]
+  const material = details[1] || ""
+  let image
+  if (material.length > 0) {
+    image = `https://raw.githubusercontent.com/BlastyTheDev/minecraft-assets/refs/heads/main/1.21.8_blocks_items/${material}.png`
+  } else if (enchantedBook) {
+    image =
+      "https://raw.githubusercontent.com/BlastyTheDev/minecraft-assets/refs/heads/main/1.21.8_blocks_items/enchanted_book.png"
+  } else {
+    image = "/"
+  }
+
   return (
     <Item variant={"outline"} asChild>
       <Link href={"/"}>
         <ItemMedia variant={"image"}>
-          <Image
-            src={
-              "https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/refs/heads/master/data/1.21.8/items/wheat.png"
-            }
-            alt=""
-            width={16}
-            height={16}
-            className="pixelated enchanted-item object-cover"
-          />
-          <div className=""></div>
+          <ClientImage src={image} alt="" />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>{itemId}</ItemTitle>
+          <ItemTitle>{name}</ItemTitle>
           <ItemDescription>{sellPrice.toFixed(2)}</ItemDescription>
         </ItemContent>
         <ItemContent>

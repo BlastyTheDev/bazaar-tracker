@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { MAX_QTY } from "@/lib/bazaarutils"
+import { MAX_QTY } from "@/lib/bazaar"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Item, ItemContent, ItemGroup } from "@/components/ui/item"
