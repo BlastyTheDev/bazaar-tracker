@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "node server.ts",
+    "dev": "tsx --tsconfig tsconfig.json server.ts",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.ts",
     "lint": "eslint",
