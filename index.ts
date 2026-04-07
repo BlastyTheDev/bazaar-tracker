@@ -19,7 +19,7 @@ async function seedItemsTable() {
     const name = sbItem
       ? sbItem.name
       : product.product_id
-          .replaceAll("_", "")
+          .replaceAll("_", " ")
           .replace("ENCHANTMENT ", "")
           .toLowerCase()
           .split(" ")
