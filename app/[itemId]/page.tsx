@@ -125,8 +125,7 @@ export default function Page() {
           <div className="my-auto grid grid-cols-2">
             <span className={`text-6xl`}>
               {clsx(
-                (price?.sell && format(Number(price.sell) / 10)) ||
-                  "Loading..."
+                (price?.sell && format(Number(price.sell) / 10)) || "Loading..."
               )}
             </span>
             <span className={`text-right text-6xl`}>{0} owned</span>
