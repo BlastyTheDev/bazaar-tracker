@@ -27,8 +27,8 @@ export default function Charts({
     const format = (n: number) => String(n).padStart(2, "0")
     const year = Math.floor((days - 1) / 372) + 1
     const dayOfYear = ((days - 1) % 372) + 1
-    const month = Math.floor((dayOfYear) / 31) + 1
-    const day = ((dayOfYear) % 31) + 1
+    const month = Math.floor(dayOfYear / 31) + 1
+    const day = (dayOfYear % 31) + 1
     return `${format(day)}/${format(month)}/${year}`
   }
 
@@ -60,6 +60,7 @@ export default function Charts({
       >
         <Pane>
           <CandlestickSeries
+            // @ts-expect-error it doesnt know what its talking about
             data={candlestickData}
             reactive={true}
           />
@@ -72,6 +73,7 @@ export default function Charts({
               lastValueVisible: false,
               priceLineVisible: false,
             }}
+            // @ts-expect-error it doesnt know what its talking about
             data={volumeData}
           />
           <PriceScale
@@ -85,6 +87,7 @@ export default function Charts({
         </Pane>
         <Pane stretchFactor={0.4}>
           <AreaSeries
+            // @ts-expect-error it doesnt know what its talking about
             data={rsiData}
             options={{
               lineColor: "cornflowerblue",
