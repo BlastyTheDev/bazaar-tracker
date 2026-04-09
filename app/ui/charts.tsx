@@ -16,10 +16,12 @@ export default function Charts({
   chartRef,
   candlestickData,
   volumeData,
+  rsiData,
 }: {
   chartRef: RefObject<HTMLDivElement | null>
   candlestickData: CandlestickData[]
   volumeData: SingleValueData[]
+  rsiData: SingleValueData[]
 }) {
   const timeFormatter = (days: number) => {
     const format = (n: number) => String(n).padStart(2, "0")
@@ -83,7 +85,7 @@ export default function Charts({
         </Pane>
         <Pane stretchFactor={0.4}>
           <AreaSeries
-            data={[]}
+            data={rsiData}
             options={{
               lineColor: "cornflowerblue",
               lineWidth: 2,

@@ -38,6 +38,7 @@ export default function Page() {
   const [price, setPrice] = useState<typeof pricesTable.$inferSelect>()
   const [candlesticks, setCandlesticks] = useState<CandlestickData[]>()
   const [volume, setVolume] = useState<SingleValueData[]>()
+  const [rsi, setRsi] = useState<SingleValueData[]>()
 
   const priceFormatter = new Intl.NumberFormat("en-AU", {
     minimumFractionDigits: 1,
@@ -68,6 +69,7 @@ export default function Page() {
       }
       setCandlesticks(data.candlestickData)
       setVolume(data.volumeData)
+
       const price = await fetchLatestPrice(itemId)
       if (!price) {
         notFound()
@@ -229,6 +231,7 @@ export default function Page() {
                 chartRef={chartRef}
                 candlestickData={candlesticks || []}
                 volumeData={volume || []}
+                rsiData={rsi || []}
               />
             </TabsContent>
             <TabsContent value="orders"></TabsContent>
