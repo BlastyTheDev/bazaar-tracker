@@ -28,6 +28,7 @@ export default function ItemList() {
       const newItems = products.map((product) => (
         <BazaarItem
           key={product.product_id}
+          itemId={product.product_id}
           details={(() => {
             const item = items.find((i) => i.id === product.product_id)
 

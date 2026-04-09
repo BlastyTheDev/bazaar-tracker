@@ -1,4 +1,4 @@
-import { integer, pgTable, primaryKey, text } from "drizzle-orm/pg-core"
+import { bigint, integer, pgTable, primaryKey, text } from "drizzle-orm/pg-core"
 
 export const itemsTable = pgTable("items", {
   id: text().primaryKey(),
@@ -12,12 +12,12 @@ export const pricesTable = pgTable(
     itemId: text("item_id")
       .notNull()
       .references(() => itemsTable.id, { onDelete: "cascade" }),
-    time: integer().notNull(),
-    sell: integer().notNull(), // 1.1 coins = 11 in db
+    time: bigint({ mode: "bigint" }).notNull(),
+    sell: bigint({ mode: "bigint" }).notNull(), // 1.1 coins = 11 in db
     supply: integer().notNull(),
     sell_vol: integer().notNull(),
     offers: integer().notNull(),
-    buy: integer().notNull(), // 1.1 coins = 11 in db
+    buy: bigint({ mode: "bigint" }).notNull(), // 1.1 coins = 11 in db
     demand: integer().notNull(),
     buy_vol: integer().notNull(),
     orders: integer().notNull(),

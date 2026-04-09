@@ -4,6 +4,7 @@ import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import Navbar from "@/app/ui/navbar"
+import ItemList from "@/app/ui/itemlist"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -31,7 +32,10 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <Navbar />
-          {children}
+          <div className="mx-2 mt-4 mb-2 grid h-full grid-cols-5 gap-2">
+            <ItemList />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

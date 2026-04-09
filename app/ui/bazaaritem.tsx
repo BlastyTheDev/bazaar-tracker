@@ -13,10 +13,12 @@ const ClientImage = dynamic(() => import("@/app/ui/clientimage"), {
 })
 
 export default function BazaarItem({
+  itemId,
   details,
   enchantedBook,
   sellPrice,
 }: {
+  itemId: string
   details: string[]
   enchantedBook: boolean
   sellPrice: number
@@ -35,7 +37,7 @@ export default function BazaarItem({
 
   return (
     <Item variant={"outline"} asChild>
-      <Link href={"/"}>
+      <Link href={`/${itemId}`}>
         <ItemMedia variant={"image"}>
           <ClientImage src={image} alt="" />
         </ItemMedia>

@@ -1,12 +1,8 @@
 import "dotenv/config"
-import { drizzle } from "drizzle-orm/postgres-js"
-import postgres from "postgres"
 import { fetchBazaarData } from "./lib/bazaar"
-import { itemsTable } from "./db/schema"
+import { itemsTable, pricesTable } from "./db/schema"
 import { fetchItemsData } from "./lib/skyblockitems"
-
-const client = postgres(process.env.DATABASE_URL!)
-const db = drizzle({ client })
+import { db } from "./db/db"
 
 async function seedItemsTable() {
   const bazaarData = await fetchBazaarData()
@@ -39,3 +35,21 @@ async function seedItemsTable() {
   })
   console.log("Success!")
 }
+
+async function tes() {
+  const a: typeof pricesTable.$inferInsert = {
+    itemId: "BOOSTER_COOKIE",
+    time: BigInt(6969696969),
+    sell: BigInt(10),
+    supply: 1,
+    sell_vol: 1,
+    offers: 1,
+    buy: BigInt(9218398),
+    demand: 1,
+    buy_vol: 1,
+    orders: 1,
+  }
+  await db.insert(pricesTable).values(a)
+}
+
+tes()

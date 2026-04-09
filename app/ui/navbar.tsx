@@ -35,7 +35,7 @@ export default function Navbar() {
             <ItemTitle>Bank Balance</ItemTitle>
           </ItemContent>
           <ItemContent>
-            <ItemDescription>1 084 274 655.72</ItemDescription>
+            <ItemDescription>0.0</ItemDescription>
           </ItemContent>
         </Item>
         <Item className="py-0">
@@ -43,7 +43,7 @@ export default function Navbar() {
             <ItemTitle>Purse</ItemTitle>
           </ItemContent>
           <ItemContent>
-            <ItemDescription>249 523 588.87</ItemDescription>
+            <ItemDescription>0.0</ItemDescription>
           </ItemContent>
         </Item>
         <Item className="py-0">
@@ -51,7 +51,7 @@ export default function Navbar() {
             <ItemTitle>Portfolio Value</ItemTitle>
           </ItemContent>
           <ItemContent>
-            <ItemDescription>305 877 128.23</ItemDescription>
+            <ItemDescription>0.0</ItemDescription>
           </ItemContent>
         </Item>
         <Item className="py-0">
@@ -59,7 +59,7 @@ export default function Navbar() {
             <ItemTitle>Net Worth</ItemTitle>
           </ItemContent>
           <ItemContent>
-            <ItemDescription>1 639 675 372.82</ItemDescription>
+            <ItemDescription>0.0</ItemDescription>
           </ItemContent>
         </Item>
       </ItemGroup>
