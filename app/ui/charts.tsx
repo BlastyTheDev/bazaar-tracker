@@ -25,7 +25,7 @@ export default function Charts({
     const format = (n: number) => String(n).padStart(2, "0")
     const year = Math.floor((days - 1) / 372) + 1
     const dayOfYear = ((days - 1) % 372) + 1
-    const month = Math.floor((dayOfYear - 1) / 31) + 1
+    const month = Math.floor((dayOfYear) / 31) + 1
     const day = ((dayOfYear) % 31) + 1
     return `${format(day)}/${format(month)}/${year}`
   }
