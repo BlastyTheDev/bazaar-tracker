@@ -46,8 +46,8 @@ export default function BazaarItem({
           <ItemDescription>{sellPrice.toFixed(2)}</ItemDescription>
         </ItemContent>
         <ItemContent>
-          <ItemDescription>-1.02</ItemDescription>
-          <ItemDescription>-0.0%</ItemDescription>
+          <ItemDescription>+N/A</ItemDescription>
+          <ItemDescription>+N/A%</ItemDescription>
         </ItemContent>
       </Link>
     </Item>
